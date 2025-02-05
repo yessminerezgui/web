@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body align="center">
+
+    <!-- Barre de navigation avec logo aligné à gauche -->
+    <table width="100%" bgcolor="#082567">
+        <tr>
+            <!-- Logo aligné à gauche -->
+            <td align="left" width="10%">
+                <img src="esprit.png" alt="Logo Esprit" height="50" width="50"/>
+            </td>
+            
+            <!-- Liens de navigation centrés avec nouvelles couleurs -->
+            <td align="center" width="90%">
+                <a href="#travel-offers" style="color: #50C878; text-decoration: none; margin: 0 15px;">Travel Offers</a>
+                <a href="#about" style="color: #50C878; text-decoration: none; margin: 0 15px;">About</a>
+                <a href="#contact" style="color: #50C878; text-decoration: none; padding: 15px 25px; font-weight: bold; border-radius: 5px; transition: background-color 0.3s;">Contact</a>
+                <p><a href="dashboard.html" style="color: #50C878; font-size: 18px; text-decoration: none; font-weight: bold;">Dashboard</a></p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Contenu principal -->
+    <h1 style="color: #32CD32;">Bienvenue sur notre site de voyages !</h1>
+<p style="color: #A9A9A9;">Découvrez les meilleures offres de voyages et explorez le monde.</p>
+<!-- Tête de page avec nom de l'application et catégories -->
+<header style="background-color: #082567; color: #FFFFFF; padding: 20px; text-align: center;">
+    <h1>TRAVEL BOOKING</h1>
+    <p style="color: #FFA500; font-size: 18px; font-weight: bold;">
+        Family Trips - Couples' Trips - Adventure and Sports Trips
+    </p>
+</header>
+<section id="travel-offers" style="padding: 40px 0; background-color: #F4F4F4;">
+    <div class="container text-center">
+        <h2 class="section-title" style="color: #082567; font-size: 32px; margin-bottom: 20px;">TRAVEL OFFERS</h2>
+        
+        <!-- Liste des offres de voyage sur une seule ligne grâce à Flexbox -->
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <!-- Offre 1 -->
+            <div class="offer-card" style="background-color: #FFFFFF; padding: 20px; margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 30%; box-sizing: border-box;">
+                <img src="circus.png" alt="Family Trip" style="width: 100%; height: auto; border-radius: 8px;">
+                <h3 style="color: #082567; margin-top: 15px;">Family Trip</h3>
+                <p style="color: #707070;">Enjoy a relaxing family vacation with activities for everyone!</p>
+                <a href="family-trip.html" class="btn" style="background-color: #50C878; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Learn More</a>
+            </div>
+            
+            <!-- Offre 2 -->
+            <div class="offer-card" style="background-color: #FFFFFF; padding: 20px; margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 30%; box-sizing: border-box;">
+                <img src="cabin.png" alt="Couples Trip" style="width: 100%; height: auto; border-radius: 8px;">
+                <h3 style="color: #082567; margin-top: 15px;">Couples' Trip</h3>
+                <p style="color: #707070;">Discover romantic destinations for an unforgettable escape.</p>
+                <a href="couples-trip.html" class="btn" style="background-color: #50C878; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Learn More</a>
+            </div>
+            
+            <!-- Offre 3 -->
+            <div class="offer-card" style="background-color: #FFFFFF; padding: 20px; margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 30%; box-sizing: border-box;">
+                <img src="submarine.png" alt="Adventure Trip" style="width: 100%; height: auto; border-radius: 8px;">
+                <h3 style="color: #082567; margin-top: 15px;">Adventure Trip</h3>
+                <p style="color: #707070;">Get your adrenaline pumping with exciting adventures!</p>
+                <a href="adventure-trip.html" class="btn" style="background-color: #50C878; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about" style="padding: 50px 0; background-color: #F4F4F4; text-align: center;">
+    <div class="container">
+        <h2 style="color: #082567; font-size: 32px; margin-bottom: 20px;">ABOUT</h2>
+        <p style="color: #505050; font-size: 18px; max-width: 800px; margin: 0 auto;">
+            <strong>Travel Booking</strong> is your ultimate travel companion! Our platform allows you to 
+            explore, compare, and book amazing trips tailored to your preferences. Whether you're looking 
+            for a relaxing family getaway, a romantic escape, or an adrenaline-packed adventure, 
+            we offer the best travel deals with seamless booking experiences.
+        </p>
+    </div>
+</section>
+<section id="contact" style="padding: 50px 0; background-color: #f8f9fa; text-align: center;">
+    <div class="container" style="max-width: 800px; background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #082567; font-size: 32px; margin-bottom: 20px; font-weight: bold;">Contactez-nous</h2>
+        <p class="font-weight-light" style="color: #333; margin-bottom: 40px; font-size: 18px;">Une question ? Nous serions ravis de vous aider !</p>
+        
+        <form action="send_message.php" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label" style="font-weight: bold; color: #082567;">Nom :</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Votre nom" required style="border: 2px solid #50C878; border-radius: 5px; padding: 10px;">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label" style="font-weight: bold; color: #082567;">Email :</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Votre email" required style="border: 2px solid #50C878; border-radius: 5px; padding: 10px;">
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label" style="font-weight: bold; color: #082567;">Message :</label>
+                <textarea id="message" name="message" class="form-control" rows="4" placeholder="Votre message" required style="border: 2px solid #50C878; border-radius: 5px; padding: 10px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="background-color: #50C878; color: white; border-radius: 5px; padding: 12px 25px; border: none; font-weight: bold; font-size: 16px;">Envoyer</button>
+        </form>
+    </div>
+</section>
+
+
+
+<footer style="background-color: #082567; color: #FFFFFF; text-align: center; padding: 20px;">
+    <p>📍 13 avenue de la liberté, 2083</p>
+    <p>✉️ <a href="mailto:yassmine.rezgui@esprit.tn" style="color: #50C878; text-decoration: none;">
+        yassmine.rezgui@esprit.tn</a></p>
+    <p>© 2024 Your Website. All Rights Reserved.</p>
+</footer>
+
+
+
+</body>
+</html>
