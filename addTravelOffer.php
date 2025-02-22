@@ -1,3 +1,5 @@
+<?php
+echo <<<HTML
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,31 +26,36 @@
     <div style="margin-top: 50px; width: 80%; margin: auto;">
         <h2 style="text-align: center; color: #082567;">Ajouter une Offre de Voyage</h2>
 
-        <form action="#" method="post">
+        <form id="offerForm" action="#" method="post">
             <div>
                 <label for="title" style="font-weight: bold;">Titre de l'offre *</label>
                 <input type="text" id="title" placeholder="Ex: Offre spéciale été" required style="width: 100%; padding: 10px; margin: 8px 0;">
+                <span id="titleError" class="error-message" style="color: red;"></span>
             </div>
 
             <div>
                 <label for="destination" style="font-weight: bold;">Destination *</label>
                 <input type="text" id="destination" placeholder="Ex: Paris, Rome" required style="width: 100%; padding: 10px; margin: 8px 0;">
+                <span id="destinationError" class="error-message" style="color: red;"></span>
             </div>
 
             <div style="display: flex; justify-content: space-between;">
                 <div style="width: 48%;">
                     <label for="departureDate" style="font-weight: bold;">Date de départ *</label>
                     <input type="date" id="departureDate" required style="width: 100%; padding: 10px; margin: 8px 0;">
+                    <span id="departureDateError" class="error-message" style="color: red;"></span>
                 </div>
                 <div style="width: 48%;">
                     <label for="returnDate" style="font-weight: bold;">Date de retour *</label>
                     <input type="date" id="returnDate" required style="width: 100%; padding: 10px; margin: 8px 0;">
+                    <span id="returnDateError" class="error-message" style="color: red;"></span>
                 </div>
             </div>
 
             <div>
                 <label for="price" style="font-weight: bold;">Prix (€) *</label>
                 <input type="number" id="price" placeholder="Ex: 199.99" step="0.01" required style="width: 100%; padding: 10px; margin: 8px 0;">
+                <span id="priceError" class="error-message" style="color: red;"></span>
             </div>
 
             <div>
@@ -59,6 +66,7 @@
                     <option value="couples">Couples' Trips</option>
                     <option value="adventure">Adventure and Sports Trips</option>
                 </select>
+                <span id="categoryError" class="error-message" style="color: red;"></span>
             </div>
 
             <div style="text-align: center;">
@@ -67,6 +75,8 @@
                 </button>
             </div>
         </form>
+
+        <p id="success-message" style="color: green; text-align: center;"></p>
     </div>
 
     <!-- Pied de page -->
@@ -75,45 +85,10 @@
         <p>✉️ <a href="mailto:yassmine.rezgui@esprit.tn" style="color: #50C878; text-decoration: none;">yassmine.rezgui@esprit.tn</a></p>
         <p>© 2024 Your Website. All Rights Reserved.</p>
     </footer>
- <script src="addOffer.js"></script>
-    <form id="offerForm">
-        <div>
-            <label for="title">Titre de l'offre *</label>
-            <input type="text" id="title">
-            <span class="error-message" id="titleError" style="color: red;"></span>
-        </div>
-    
-        <div>
-            <label for="destination">Destination *</label>
-            <input type="text" id="destination">
-            <span class="error-message" id="destinationError" style="color: red;"></span>
-        </div>
-    
-        <div>
-            <label for="departureDate">Date de départ *</label>
-            <input type="date" id="departureDate">
-            <span class="error-message" id="departureDateError" style="color: red;"></span>
-        </div>
-    
-        <div>
-            <label for="returnDate">Date de retour *</label>
-            <input type="date" id="returnDate">
-            <span class="error-message" id="returnDateError" style="color: red;"></span>
-        </div>
-    
-        <div>
-            <label for="price">Prix (€) *</label>
-            <input type="number" id="price">
-            <span class="error-message" id="priceError" style="color: red;"></span>
-        </div>
-    
-        <div style="text-align: center;">
-            <button type="submit" id="submitButton">Ajouter l'offre</button>
-        </div>
-    
-        <p id="success-message" style="text-align: center; font-weight: bold;"></p>
-    </form>
-    
+
+    <script src="addOffer.js"></script>
 
 </body>
 </html>
+HTML;
+?>
