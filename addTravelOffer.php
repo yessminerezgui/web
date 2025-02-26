@@ -38,6 +38,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter une Offre de Voyage</title>
+    <style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #082567;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #041c48;
+}
+
+footer {
+    margin-top: 20px;
+}
+</style>
 </head>
 <body>
 
@@ -60,49 +110,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p style="color: red; text-align: center;"><?php echo $errorMessage; ?></p>
         <?php endif; ?>
 
-        <form id="offerForm" action="" method="post">
-            <div>
-                <label for="title" style="font-weight: bold;">Titre de l'offre *</label>
-                <input type="text" id="title" name="title" placeholder="Ex: Offre spéciale été" required style="width: 100%; padding: 10px; margin: 8px 0;">
-            </div>
+        <form id="offerForm" action="Verification.php" method="post">
+    <div>
+        <label for="title">Titre de l'offre *</label>
+        <input type="text" id="title" name="title" required>
+    </div>
 
-            <div>
-                <label for="destination" style="font-weight: bold;">Destination *</label>
-                <input type="text" id="destination" name="destination" placeholder="Ex: Paris, Rome" required style="width: 100%; padding: 10px; margin: 8px 0;">
-            </div>
+    <div>
+        <label for="destination">Destination *</label>
+        <input type="text" id="destination" name="destination" required>
+    </div>
 
-            <div style="display: flex; justify-content: space-between;">
-                <div style="width: 48%;">
-                    <label for="departureDate" style="font-weight: bold;">Date de départ *</label>
-                    <input type="date" id="departureDate" name="departureDate" required style="width: 100%; padding: 10px; margin: 8px 0;">
-                </div>
-                <div style="width: 48%;">
-                    <label for="returnDate" style="font-weight: bold;">Date de retour *</label>
-                    <input type="date" id="returnDate" name="returnDate" required style="width: 100%; padding: 10px; margin: 8px 0;">
-                </div>
-            </div>
+    <div>
+        <label for="departureDate">Date de départ *</label>
+        <input type="date" id="departureDate" name="departureDate" required>
+    </div>
 
-            <div>
-                <label for="price" style="font-weight: bold;">Prix (€) *</label>
-                <input type="number" id="price" name="price" placeholder="Ex: 199.99" step="0.01" required style="width: 100%; padding: 10px; margin: 8px 0;">
-            </div>
+    <div>
+        <label for="returnDate">Date de retour *</label>
+        <input type="date" id="returnDate" name="returnDate" required>
+    </div>
 
-            <div>
-                <label for="category" style="font-weight: bold;">Catégorie *</label>
-                <select id="category" name="category" required style="width: 100%; padding: 10px; margin: 8px 0;">
-                    <option value="">-- Choisissez une catégorie --</option>
-                    <option value="family">Family Trips</option>
-                    <option value="couples">Couples' Trips</option>
-                    <option value="adventure">Adventure and Sports Trips</option>
-                </select>
-            </div>
+    <div>
+        <label for="price">Prix (€) *</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+    </div>
 
-            <div style="text-align: center;">
-                <button type="submit" style="background-color: #50C878; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-                    Ajouter l'offre
-                </button>
-            </div>
-        </form>
+    <div>
+        <label for="category">Catégorie *</label>
+        <select id="category" name="category" required>
+            <option value="">-- Choisissez une catégorie --</option>
+            <option value="family">Family Trips</option>
+            <option value="couples">Couples' Trips</option>
+            <option value="adventure">Adventure and Sports Trips</option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Ajouter l'offre</button>
+    </div>
+</form>
+
     </div>
 
     <footer style="background-color: #082567; color: white; text-align: center; padding: 20px;">
