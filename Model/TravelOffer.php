@@ -8,7 +8,6 @@ class TravelOffer {
     private $price;
     private $category;
 
-    // Constructeur paramétré
     public function __construct($title, $destination, $departureDate, $returnDate, $price, $category) {
         $this->title = $title;
         $this->destination = $destination;
@@ -18,7 +17,7 @@ class TravelOffer {
         $this->category = $category;
     }
 
-    // Getters pour accéder aux attributs privés
+    // Getters
     public function getTitle() {
         return $this->title;
     }
@@ -46,14 +45,14 @@ class TravelOffer {
     // Méthode pour afficher les informations sous forme de tableau HTML
     public function show() {
         echo "<table border='1' cellspacing='0' cellpadding='5'>";
-        echo "<tr><th>Title</th><th>Destination</th><th>Departure Date</th><th>Return Date</th><th>Price (€)</th><th>Category</th></tr>";
+        echo "<tr><th>Titre</th><th>Destination</th><th>Date de départ</th><th>Date de retour</th><th>Prix (€)</th><th>Catégorie</th></tr>";
         echo "<tr>
-                <td>{$this->title}</td>
-                <td>{$this->destination}</td>
-                <td>{$this->departureDate}</td>
-                <td>{$this->returnDate}</td>
-                <td>{$this->price}</td>
-                <td>{$this->category}</td>
+                <td>{$this->getTitle()}</td>
+                <td>{$this->getDestination()}</td>
+                <td>{$this->getDepartureDate()}</td>
+                <td>{$this->getReturnDate()}</td>
+                <td>{$this->getPrice()}</td>
+                <td>{$this->getCategory()}</td>
               </tr>";
         echo "</table>";
     }
